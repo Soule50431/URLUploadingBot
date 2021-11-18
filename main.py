@@ -9,8 +9,8 @@ from notion_api import *
 DISCORD_TOKEN = os.getenv("DiscordToken")
 NOTION_TOKEN = os.getenv("NotionToken")
 
-channel_ids = list(map(int, os.getenv("ChannelIDs").split(" ")))
-database_ids = os.getenv("DatabaseIDs").split(" ")
+channel_ids = list(map(int, os.getenv("ChannelIDs").split(",")))
+database_ids = os.getenv("DatabaseIDs").split(",")
 
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
