@@ -25,8 +25,9 @@ def get_page_urls(database_id):
                                data=json.dumps(body)).json()
 
     page_urls = list()
-    for result in results["results"]:
-        page_urls.append(result["properties"]["URL"]["url"])
+    if "results" in results:
+        for result in results["results"]:
+            page_urls.append(result["properties"]["URL"]["url"])
 
     return page_urls
 
